@@ -1,0 +1,24 @@
+工控协议的参考资料：
+
+西门子S7通信过程及重放攻击分析 
+https://www.freebuf.com/articles/ics-articles/212283.html
+
+工控安全 | 西门子通信协议S7COMM（Part 1）
+https://www.freebuf.com/articles/ics-articles/188159.html
+
+网络编程库的参考资料：
+
+Socket编程：
+https://www.zhihu.com/question/29637351
+http://c.biancheng.net/socket/
+https://www.runoob.com/python3/python3-socket.html
+https://www.runoob.com/python/python-socket.html
+
+更底层的网络编程：
+Winpcap：
+https://www.winpcap.org/docs/
+
+Python Scapy：
+https://scapy.net/
+
+

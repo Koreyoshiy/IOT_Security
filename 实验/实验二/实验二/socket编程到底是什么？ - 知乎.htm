@@ -1,0 +1,88 @@
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this file,
+   - You can obtain one at http://mozilla.org/MPL/2.0/. -->
+<!DOCTYPE html>
+<html platform="win"><head>
+  <meta http-equiv="Content-Security-Policy" content="default-src chrome:; img-src data: *; media-src *; object-src 'none'">
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+  <meta name="viewport" content="width=device-width; user-scalable=0">
+  <link rel="stylesheet" href="chrome://global/skin/aboutReader.css" type="text/css">
+<link rel="stylesheet" href="chrome://global/skin/narrate.css"><title>socket编程到底是什么？ - 知乎</title><link rel="shortcut icon" href="https://static.zhihu.com/heifetz/assets/apple-touch-icon-152.a53ae37b.png"></head>
+
+<body class="light sans-serif loaded" style="--font-size: 24px; --content-width: 30em;">
+  <div class="top-anchor"></div>
+
+  <div id="toolbar" class="toolbar-container">
+    <div class="toolbar reader-toolbar">
+      <div class="reader-controls" articledir="ltr">
+        <button class="close-button button " data-telemetry-id="reader-close" aria-label="关闭阅读模式"><span class="hover-label">关闭阅读模式</span></button>
+        <ul class="dropdown style-dropdown">
+          <li>
+            <button class="dropdown-toggle button style-button" data-telemetry-id="reader-type-controls" aria-label="字型调控"><span class="hover-label">字型调控</span></button>
+          </li>
+          <li class="dropdown-popup">
+            <div class="dropdown-arrow"></div>
+            <div class="font-type-buttons radiorow"><input id="radio-itemsans-serif-button" type="radio" class="radio-button" name="font-type" checked="checked"><label for="radio-itemsans-serif-button" class="sans-serif-button" checked="true">无衬线</label><input id="radio-itemserif-button" type="radio" class="radio-button" name="font-type"><label for="radio-itemserif-button" class="serif-button">衬线</label></div>
+            <div class="font-size-buttons buttonrow">
+              <button class="minus-button" title="缩小文字"></button>
+              <span class="font-size-value">7</span>
+              <button class="plus-button" title="增大文字">
+            </button></div>
+            <div class="content-width-buttons buttonrow">
+               <button class="content-width-minus-button" title="缩小内容宽度"></button>
+               <span class="content-width-value">3</span>
+               <button class="content-width-plus-button" title="放大内容宽度">
+            </button></div>
+            <div class="line-height-buttons buttonrow">
+                <button class="line-height-minus-button" title="缩小行距"></button>
+                <span class="line-height-value">4</span>
+                <button class="line-height-plus-button" title="放大行距">
+            </button></div>
+            <div class="color-scheme-buttons radiorow"><input id="radio-itemlight-button" type="radio" class="radio-button" name="color-scheme" checked="checked"><label for="radio-itemlight-button" class="light-button" checked="true" title="亮色模式">亮色</label><input id="radio-itemdark-button" type="radio" class="radio-button" name="color-scheme"><label for="radio-itemdark-button" class="dark-button" title="暗色模式">暗色</label><input id="radio-itemsepia-button" type="radio" class="radio-button" name="color-scheme"><label for="radio-itemsepia-button" class="sepia-button" title="纸墨模式">纸墨</label></div>
+          </li>
+        </ul>
+      <ul class="dropdown narrate-dropdown"><li><button class="dropdown-toggle button narrate-toggle" data-telemetry-id="reader-listen" aria-label="聆听"><span class="hover-label">聆听</span></button></li><li class="dropdown-popup"><div class="narrate-row narrate-control"><button class="narrate-skip-previous" disabled="disabled" title="后退"></button><button class="narrate-start-stop" title="开始"></button><button class="narrate-skip-next" disabled="disabled" title="前进"></button></div><div class="narrate-row narrate-rate"><input class="narrate-rate-input" value="0" step="5" max="100" min="-100" type="range" title="速度"></div><div class="narrate-row narrate-voices"><div class="voiceselect voice-select"><button class="select-toggle" aria-controls="voice-options">
+      <span class="label">语音：</span> <span class="current-voice">默认</span>
+    </button>
+    <div class="options" id="voice-options" role="listbox" style="max-height: 945px;"><button data-value="automatic" class="option selected" tabindex="-1" role="option" aria-selected="true">默认</button><button data-value="urn:moz-tts:sapi:Microsoft Huihui Desktop - Chinese (Simplified)?zh-CN" class="option" tabindex="-1" role="option">Microsoft Huihui Desktop - Chinese (Simplified)</button></div></div></div><div class="dropdown-arrow"></div></li></ul><button data-buttonid="pocket-button" data-telemetry-id="reader-save-to-pocket" class="button pocket-button" aria-label="保存到 Pocket" style="background-image: url(&quot;chrome://global/skin/icons/pocket.svg&quot;); background-size: 16px 16px;"><span class="hover-label">保存到 Pocket</span></button></div>
+    </div>
+  </div>
+
+  <div class="container" style="--line-height: 1.6em;" dir="ltr">
+    <div class="header reader-header reader-show-element">
+      <a class="domain reader-domain" href="https://www.zhihu.com/question/29637351">zhihu.com</a>
+      <div class="domain-border"></div>
+      <h1 class="reader-title">socket编程到底是什么？ - 知乎</h1>
+      <div class="credits reader-credits">小林coding​公众号：「小林coding」 专注图解计算机基础</div>
+      <div class="meta-data">
+        <div class="reader-estimated-time" dir="ltr">11-14 分钟</div>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="content">
+      <div class="moz-reader-content reader-show-element"><div id="readability-page-1" class="page"><p><span itemprop="text"></span></p><p>来，先给你看一张图。</p><figure data-size="normal"><img src="socket%E7%BC%96%E7%A8%8B%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F%20-%20%E7%9F%A5%E4%B9%8E_files/v2-226e5169b8c0da05cb3605d00269356f_720w.jpg" data-caption="" data-size="normal" data-rawwidth="903" data-rawheight="917" data-default-watermark-src="https://pic3.zhimg.com/50/v2-6c640d8c39c908a52195e80e4773f20b_720w.jpg?source=1940ef5c" data-original="https://pic1.zhimg.com/v2-226e5169b8c0da05cb3605d00269356f_r.jpg?source=1940ef5c" data-actualsrc="https://pic1.zhimg.com/50/v2-226e5169b8c0da05cb3605d00269356f_720w.jpg?source=1940ef5c" data-lazy-status="ok" width="903"></figure><p><b>socket 其实就是操作系统提供给程序员操作「网络协议栈」的接口，说人话就是，你能通过socket 的接口，来控制协议找工作，从而实现网络通信，达到跨主机通信。</b></p><p>协议栈的上半部分有两块，分别是负责收发数据的 TCP 和 UDP 协议，它们两会接受应用层的委托执行收发数据的操作。</p><p>协议栈的下面一半是用 IP 协议控制网络包收发操作，在互联网上传数据时，数据会被切分成一块块的网络包，而将网络包发送给对方的操作就是由 IP 负责的。</p><p>此外 IP 中还包括 <code>ICMP</code> 协议和 <code>ARP</code> 协议。</p><ul><li><code>ICMP</code> 用于告知网络包传送过程中产生的错误以及各种控制信息。</li><li><code>ARP</code> 用于根据 IP 地址查询相应的以太网 MAC 地址。</li></ul><p>IP 下面的网卡驱动程序负责控制网卡硬件，而最下面的网卡则负责完成实际的收发操作，也就是对网线中的信号执行发送和接收操作。</p><p>那具体 socket  有哪些接口呢？</p><p>socket  一般分为 <b>TCP 网络编程</b>和 <b>UDP 网络编程。</b></p><h2>TCP 网络编程</h2><p>先来看看 TCP 网络编程，一幅图就很好理解。</p><figure data-size="normal"><img src="socket%E7%BC%96%E7%A8%8B%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F%20-%20%E7%9F%A5%E4%B9%8E_files/v2-7105d213a9207bf0d497455c652df7e2_720w.jpg" data-caption="" data-size="normal" data-rawwidth="1188" data-rawheight="1007" data-default-watermark-src="https://pic1.zhimg.com/50/v2-3051b0abc1c74b4d8ed53dba4c254cf6_720w.jpg?source=1940ef5c" data-original="https://pic1.zhimg.com/v2-7105d213a9207bf0d497455c652df7e2_r.jpg?source=1940ef5c" data-actualsrc="https://pic2.zhimg.com/50/v2-7105d213a9207bf0d497455c652df7e2_720w.jpg?source=1940ef5c" data-lazy-status="ok" width="1188"></figure><p>基于 TCP 协议的客户端和服务器工作</p><ul><li>服务端和客户端初始化 <code>socket</code>，得到文件描述符；</li><li>服务端调用 <code>bind</code>，将绑定在 IP 地址和端口;</li><li>服务端调用 <code>listen</code>，进行监听；</li><li>服务端调用 <code>accept</code>，等待客户端连接；</li><li>客户端调用 <code>connect</code>，向服务器端的地址和端口发起连接请求；</li><li>服务端 <code>accept</code> 返回用于传输的 <code>socket</code> 的文件描述符；</li><li>客户端调用 <code>write</code> 写入数据；服务端调用 <code>read</code> 读取数据；</li><li>客户端断开连接时，会调用 <code>close</code>，那么服务端 <code>read</code> 读取数据的时候，就会读取到了 <code>EOF</code>，待处理完数据后，服务端调用 <code>close</code>，表示连接关闭。</li></ul><p>这里需要注意的是，服务端调用 <code>accept</code> 时，连接成功了会返回一个已完成连接的 socket，后续用来传输数据。</p><p>所以，监听的 socket 和真正用来传送数据的 socket，是「两个」 socket，一个叫作<b>监听 socket</b>，一个叫作<b>已完成连接 socket</b>。</p><p>成功连接建立之后，双方开始通过 read 和 write 函数来读写数据，就像往一个文件流里面写东西一样。</p><h2>结合三次握手连接的 TCP socket</h2><figure data-size="normal"><img src="socket%E7%BC%96%E7%A8%8B%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F%20-%20%E7%9F%A5%E4%B9%8E_files/v2-527311b944dd6de447c2f2d15f615e11_720w.jpg" data-caption="" data-size="normal" data-rawwidth="887" data-rawheight="678" data-default-watermark-src="https://pic2.zhimg.com/50/v2-225822f86426583ec3cad322aec35650_720w.jpg?source=1940ef5c" data-original="https://pic2.zhimg.com/v2-527311b944dd6de447c2f2d15f615e11_r.jpg?source=1940ef5c" data-actualsrc="https://pic3.zhimg.com/50/v2-527311b944dd6de447c2f2d15f615e11_720w.jpg?source=1940ef5c" data-lazy-status="ok" width="887"></figure><p>客户端连接服务端</p><ul><li>客户端的协议栈向服务器端发送了 SYN 包，并告诉服务器端当前发送序列号 client_isn，客户端进入 SYN_SENT 状态；</li><li>服
+务器端的协议栈收到这个包之后，和客户端进行 ACK 应答，应答的值为 client_isn+1，表示对 SYN 包 client_isn 
+的确认，同时服务器也发送一个 SYN 包，告诉客户端当前我的发送序列号为 server_isn，服务器端进入 SYN_RCVD 状态；</li><li>客户端协议栈收到 ACK 之后，使得应用程序从 <code>connect</code> 调用返回，表示客户端到服务器端的单向连接建立成功，客户端的状态为 ESTABLISHED，同时客户端协议栈也会对服务器端的 SYN 包进行应答，应答数据为 server_isn+1；</li><li>应答包到达服务器端后，服务器端协议栈使得 <code>accept</code> 阻塞调用返回，这个时候服务器端到客户端的单向连接也建立成功，服务器端也进入 ESTABLISHED 状态。</li></ul><h2>结合四次次挥手的 TCP socket</h2><figure data-size="normal"><img src="socket%E7%BC%96%E7%A8%8B%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F%20-%20%E7%9F%A5%E4%B9%8E_files/v2-41ee0ce58d9cbada7edd9fa8ded1f07e_720w.jpg" data-caption="" data-size="normal" data-rawwidth="753" data-rawheight="794" data-default-watermark-src="https://pic1.zhimg.com/50/v2-2417a86434437f9707cecb9c322f3b81_720w.jpg?source=1940ef5c" data-original="https://pic3.zhimg.com/v2-41ee0ce58d9cbada7edd9fa8ded1f07e_r.jpg?source=1940ef5c" data-actualsrc="https://pica.zhimg.com/50/v2-41ee0ce58d9cbada7edd9fa8ded1f07e_720w.jpg?source=1940ef5c" data-lazy-status="ok" width="753"></figure><p>客户端调用 close 过程</p><ul><li>客户端调用 <code>close</code>，表明客户端没有数据需要发送了，则此时会向服务端发送 FIN 报文，进入 FIN_WAIT_1 状态；</li><li>服务端接收到了 FIN 报文，TCP 协议栈会为 FIN 包插入一个文件结束符 <code>EOF</code> 到接收缓冲区中，应用程序可以通过 <code>read</code> 调用来感知这个 FIN 包。这个 <code>EOF</code> 会被<b>放在已排队等候的其他已接收的数据之后</b>，这就意味着服务端需要处理这种异常情况，因为 EOF 表示在该连接上再无额外数据到达。此时，服务端进入 CLOSE_WAIT 状态；</li><li>接着，当处理完数据后，自然就会读到 <code>EOF</code>，于是也调用 <code>close</code> 关闭它的套接字，这会使得客户端会发出一个 FIN 包，之后处于 LAST_ACK 状态；</li><li>客户端接收到服务端的 FIN 包，并发送 ACK 确认包给服务端，此时客户端将进入 TIME_WAIT 状态；</li><li>服务端收到 ACK 确认包后，就进入了最后的 CLOSE 状态；</li><li>客户端经过 <code>2MSL</code> 时间之后，也进入 CLOSE 状态；</li></ul><p>以为内容我都出自我的《图解网络》PDF。</p><p>因为我在知乎共输出了 <b>20 多篇图解网络系列的文章，总字数高达 15W 字，并且手绘的图共有 500 张，</b>收获了很多读者的认可和支持，不少读者跑来感激我，说我的图解网络在面试中帮助到他们，不少人拿到了阿里、腾讯、字节等大厂的Offer。</p><figure data-size="normal"><img src="socket%E7%BC%96%E7%A8%8B%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F%20-%20%E7%9F%A5%E4%B9%8E_files/v2-7809c1cbf2b383e99f89cc8730ca1c46_720w.jpg" data-caption="" data-size="normal" data-rawwidth="1080" data-rawheight="862" data-original="https://pic2.zhimg.com/v2-7809c1cbf2b383e99f89cc8730ca1c46_r.jpg?source=1940ef5c" data-actualsrc="https://pica.zhimg.com/50/v2-7809c1cbf2b383e99f89cc8730ca1c46_720w.jpg?source=1940ef5c" data-lazy-status="ok" width="1080"></figure><p>为了帮忙阅读我把<b>图解网络</b>整理成了PDF，大家可以作为面基突击的手册，开源给大家下载：</p><h2>学习 Linux 网络编程的心得</h2><p>说下我学 Linux 网络编程的心得。</p><p>当初在学网络编程的时候，看见网上的人都说 UNP（Unix 网络编程）、APUE（Unix 高级环境编程）这两本书是网络编程圣经的书，那么好学的小林，那肯定毫无犹豫买了。</p><p>书到货后，我瞬间就懵逼了，这两本书是我买过最厚的书，这尼玛怎么学？</p><p>跟着书本的节奏，学了一段的时间，是懂了些 Linux 网络和系统 API 的用法，摸索来摸索去都是各个 API 的细节，<b>始终不知道高并发网络框架是如何实现的</b>。</p><figure data-size="normal"><img src="socket%E7%BC%96%E7%A8%8B%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F%20-%20%E7%9F%A5%E4%B9%8E_files/v2-6110887fe0f8e3786f17307bd6576129_720w.jpg" data-caption="" data-size="normal" data-rawwidth="1280" data-rawheight="960" data-original="https://pic1.zhimg.com/v2-6110887fe0f8e3786f17307bd6576129_r.jpg?source=1940ef5c" data-actualsrc="https://pic3.zhimg.com/50/v2-6110887fe0f8e3786f17307bd6576129_720w.jpg?source=1940ef5c" data-lazy-status="ok" width="1280"></figure><p>后面我又重新找了一波关于网络编程的书，找到了这两本：《TCP/IP 网络编程》和《Linux高性能服务器编程》。</p><ul><li>《TCP/IP
+ 
+网络编程》绝对是新手村级别的书，书里的内容不会有过多的术语，作者都用大白话来表达，配图也很清晰，也有介绍我想知道的网络框架，虽然是比较基础的多进
+程服务端模型、多线程服务端模型、异步 IO 模型。而且最后一章实现了简单的 HTTP 服务端，让我知道了从代码角度是怎么解析 HTTP 
+报文的，以及状态机是如何实现和运转的。</li><li>《Linux高性能服务器编程》这本书主要是网络框架为主，前几章关于网络基础知识对于掌握了
+计算机网络知识的同学可以直接跳过的，你看，很多知识是想通的，当我们知道掌握了这块知识后，在学习新一本书的时候，就可以跳过重叠的内容。在这本书我学
+到了，Reactor、Proactor、信号、定时器、多进程编程、多线程编程、进程池和线程池等。</li></ul><p>这两本书让我大概知道了
+如果一个服务端要服务多个客户端时，不是就简单写个 socket 编程就完事，而是还要结合 IO 多路复用 + 多线程的思想，也就是 
+Reactor 的设计理念，知道了这些事情后，后面我在看很多开源框架的网络模型时候，发现大多数基于 Reactor 的思想来实现的。</p><p>有了网络编程总体的视角后，在需要深入理解 socket api 中各种属性设置（超时、非阻塞 IO、阻塞 IO 等）和异常处理就要回归 APUE 这本书。</p><p>到这里我才知道 UNP 和 APUE 为什么会被称为网络编程圣经级别的书，原因是书里各种细节和异常都写的很全，也很细致，可以应对工作中很多问题。</p><p>但是事实证明，它并不是个入门级的书，所以 UNP 和 APUE 的用途比较像字典，在需要的时候去查阅就好。</p><p><b>我从网上搜集了一系列计算机电子书，是一套很系统的学习计算机的好东西。</b></p><figure data-size="normal"><img src="socket%E7%BC%96%E7%A8%8B%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F%20-%20%E7%9F%A5%E4%B9%8E_files/v2-3df4548d47113a013f0207076eb0522f_720w.jpg" data-caption="" data-size="normal" data-actualsrc="https://pic3.zhimg.com/50/v2-3df4548d47113a013f0207076eb0522f_720w.jpg?source=1940ef5c"></figure><p>这次分享给大家，获取方式（含download方式）：</p><p><b>好了，最后如果对你有帮助，别忘记给个三连呀，这对我非常重要！</b></p><p>也欢迎大家关注<a href="https://www.zhihu.com/people/b99d048edd00b50737e17328ffb2bf2c">@小林coding</a></p><p></p></div></div>
+    </div>
+
+    <div>
+      <div class="reader-message"></div>
+    </div>
+    <div aria-owns="toolbar"></div>
+
+    <div id="pocket-cta-container" hidden=""></div>
+  </div>
+
+
+
+</body></html>
